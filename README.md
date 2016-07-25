@@ -1,6 +1,6 @@
-# Ping Pong
+# Pizza Order Webpage
 
-#### Ping Pong Project for Epicodus, Intro to Coding Class, July 2016
+#### Object Oriented JavaScript Independent Project for Epicodus, Intro to Coding Class, July 2016
 
 #### By Eric Krause
 
