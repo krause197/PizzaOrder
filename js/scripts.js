@@ -1,3 +1,9 @@
+function pizza(size, toppings, price) {
+  this.size = size;
+  this.toppings = toppings;
+  this.price = price;
+}
+
 var pingPong = function(number) {
   var returnArray = [];
   for (var index = 1; index <= number; index += 1) {
@@ -17,12 +23,16 @@ var pingPong = function(number) {
 
 
 $(document).ready(function() {
-  $("form#number").submit(function(event) {
+  $("form#pizzaOrder").submit(function(event) {
     event.preventDefault();
-    var number = parseInt($("input#numberInput").val());
+    var size = $("select#size").val();
+
     var result = pingPong(number);
     $(".returnArray").text(result);
 
     $("#result").show();
+    $(".size").text(pizza.size);
+    $(".toppings").text(pizza.toppings);
+    $(".price").text(pizza.price);
   });
 });
