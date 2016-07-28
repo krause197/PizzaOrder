@@ -1,24 +1,31 @@
-function pizza(size, toppings, price) {
+function pizza(size, selectToppings) {
   this.size = size;
-  this.toppings = toppings;
-  this.price = price;
+  this.selectToppings = toppings;
+  this.totalCost;
 }
 
-var pingPong = function(number) {
-  var returnArray = [];
-  for (var index = 1; index <= number; index += 1) {
-    if (index % 15 === 0){
-      returnArray.push("pingpong");
-    } else if (index % 3 === 0) {
-      returnArray.push("ping");
-    } else if (index % 5 === 0){
-      returnArray.push("pong");
-    } else {
-      returnArray.push(index);
-    }
- }
-  return returnArray;
-};
+pizza.prototype.price = function() {
+  var pizzaCost = 0;
+  if (this.size === "Kleine") {
+    pizzaCost += 8;
+  } else if (this.size === "Mittlere"){
+    pizzaCost += 10;
+  } else (this.size === "Grosse"){
+    pizzaCost += 12;
+  }
+  return pizzaCost
+}
+}
+
+var toppingsCost = function(selectToppings){
+  return (selectToppings.length() * 1.5);
+}
+
+var totalCost = function(pizzaCost, toppingsCost){
+  return ("$" + pizzaCost + toppingsCost)
+}
+
+
 
 
 
@@ -26,13 +33,24 @@ $(document).ready(function() {
   $("form#pizzaOrder").submit(function(event) {
     event.preventDefault();
     var size = $("select#size").val();
+    var result = pizza();
 
-    var result = pingPong(number);
+    $("#toppings").each(function() {
+      var inputBratwurst = $(this).find("input.bratwurst").val();
+      var inputCurrywurst = $(this).find("input.currywurst").val();
+      var inputSauerbraten = $(this).find("input.sauerbraten").val();
+      var inputSauerkraut = $(this).find("input.sauerkraut").val();
+      var inputSpatzle = $(this).find("input.spatzle").val();
+      var inputSpeck = $(this).find("input.speck").val();
+      var inputKartoffel = $(this).find("input.kartoffel").val();
+      var inputRotkohl = $(this).find("input.rotkohl").val();
+      var selectToppings = [inputBratwurst, inputCurrywurst, inputSauerbraten, inputSauerkraut, inputSpatzle, inputSpeck, inputKartoffel, inputRotkohl];
+    })
+
     $(".returnArray").text(result);
-
     $("#result").show();
     $(".size").text(pizza.size);
-    $(".toppings").text(pizza.toppings);
-    $(".price").text(pizza.price);
+    $(".toppings").text(pizza.seclectToppings);
+    $(".price").text(pizza.totalCost);
   });
 });
