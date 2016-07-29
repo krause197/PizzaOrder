@@ -6,27 +6,22 @@
 
 ## Description
 
-This is a web page that was designed as an example page using arrays and looping.  Users input a random number and the page counts up to the number, while replacing numbers divisible by 3, 5, and 15 with "ping", "pong", and "pingpong" respectively.   
+This is a web page that was designed as an example page using object oriented JavaScript.  Users can choose a size and toppings for a pizza and the page will return this order with the price.   
 
 ## Specifications
 
-* Count up to number input by user.
-  * Example input: 2
-  * Example output: [1,2]
+* Input size of pizza desired.
+  * Example input: select medium
+  * Example output: medium
 
-* All numbers returned in output divisible by 3 replaced by "ping".
-  * Example input: 3
-  * Example output: [1,2,"ping"]
+* Input desired toppings for pizza.
+  * Example input: sauerkraut
+  * Example output: [sauerkraut]
 
-* All numbers returned in output divisible by 5 replaced by "pong".
-  * Example input: 5
-  * Example output: [1,2,"ping",4,"pong"]
+* Price of pizza is calculated.
+  * Example input: medium with 3 toppings
+  * Example output: $14.50
 
-* All numbers returned in output divisible by 15 replaced by "pingpong".
- * Example input: 15
- * Example output: [1,2,"ping",4,"pong","ping",7,8,"ping","pong",11,"ping",13,14,"pingpong"]
-
-* Program will reset and return new set of numbers with each user input.
 
 ## Setup/Installation Requirements
 
