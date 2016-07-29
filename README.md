@@ -45,7 +45,7 @@ Contact the creator of this webpage at krause197@gmail.com if you have questions
 * JavaScript
 * JQuery
 
-#### GitHub Page page link: http://krause197.github.io/pingPong-Project/
+#### GitHub Page page link: http://krause197.github.io/PizzaOrder/
 
 ### License
 
